@@ -11,6 +11,7 @@ void input_random(int n){
     REP(i,n){
         vf v(n);
         generate(v.begin(), v.end(), r);
+        v[i] += n;
         A.pb(v);
         b.pb(r());
     }
@@ -45,13 +46,21 @@ void input2(){
 }
 
 void input3(){
-    n=2;
+    n=4;
     A.pb(vf {2,3,0,0});
     A.pb(vf {4,7,2,0});
     A.pb(vf {-6,-10,0,1});
     A.pb(vf {4,6,4,5});
-    b= vf {1,2,1,0};
     x = vf {0,0,0,0};
+}
+
+void input4(){
+    n=3;
+    A.pb(vf {4,2,-6});
+    A.pb(vf {2,10,9});
+    A.pb(vf {-6,9,26});
+    b= vf {1,2,1};
+    x = vf {0,0,0};
 }
 
 void input_non1(){
@@ -71,7 +80,7 @@ void input_non2(){
 
 void input(int argc, char *argv[]){
     if (argc==1)
-        input3();
+        input4();
     else 
         input_random(atoi(argv[1]));
 }

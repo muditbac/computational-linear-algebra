@@ -161,3 +161,14 @@ vvf matrixMultiply(const vvf &A, const vvf &B){
 	return ans;
 
 }
+
+void transpose(vvf &A){
+	// TODO Generalize for non square matrix
+	int m=A.size();
+	int n=A[0].size();
+
+	REP(i, m)
+		FOR(j, i, n)
+			swap(A[j][i], A[i][j]);
+
+}
